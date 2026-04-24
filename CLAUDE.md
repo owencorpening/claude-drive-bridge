@@ -32,6 +32,12 @@ Two-part bridge that lets Claude (web/artifact) push files and notes directly in
 | Save claude.md | POST | `action: "saveClaude"`, `content`, `mode: "overwrite"\|"append"` |
 | List files | POST | `action: "list"` |
 
+## Deployed endpoint
+
+```
+https://script.google.com/macros/s/AKfycbzlwyTMGoMLBjN893-N10xyAJharUFwLzLVnQ2OC4qkiMvs7IE7hEW-aWEq_lE-1-zV/exec
+```
+
 ## Credentials (never commit)
 
 - `BEARER_TOKEN` — set in the .gs file before deploying; rotate in Apps Script editor
