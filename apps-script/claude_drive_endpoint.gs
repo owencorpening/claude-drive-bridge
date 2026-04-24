@@ -16,7 +16,7 @@
  */
 
 // ── CONFIG ────────────────────────────────────────────────────────────────────
-const BEARER_TOKEN   = "CHANGE_ME_TO_A_SECRET";   // ← set this before deploying
+const BEARER_TOKEN   = PropertiesService.getScriptProperties().getProperty('DRIVE_BEARER_TOKEN');
 const FOLDER_NAME    = "claude-uploads";
 const CLAUDE_MD_NAME = "claude.md";
 // ─────────────────────────────────────────────────────────────────────────────
