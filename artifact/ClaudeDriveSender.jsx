@@ -33,7 +33,7 @@ const TOOLS = [
   }
 ];
 
-async function callEndpoint(endpointUrl, token, action, args = {}) {
+export async function callEndpoint(endpointUrl, token, action, args = {}) {
   const body = { token, action, ...args };
   const res = await fetch(endpointUrl, {
     method: "POST",
@@ -43,14 +43,14 @@ async function callEndpoint(endpointUrl, token, action, args = {}) {
   return res.json();
 }
 
-async function handleToolCall(toolName, toolInput, endpointUrl, token) {
+export async function handleToolCall(toolName, toolInput, endpointUrl, token) {
   if (toolName === "upload_file")   return callEndpoint(endpointUrl, token, "uploadFile", toolInput);
   if (toolName === "save_claude_md") return callEndpoint(endpointUrl, token, "saveClaude", toolInput);
   if (toolName === "list_files")    return callEndpoint(endpointUrl, token, "list");
   return { ok: false, error: "Unknown tool: " + toolName };
 }
 
-async function runAgentLoop(userMessage, endpointUrl, token, apiKey, onLog) {
+export async function runAgentLoop(userMessage, endpointUrl, token, apiKey, onLog) {
   const messages = [{ role: "user", content: userMessage }];
 
   for (let turn = 0; turn < 6; turn++) {
