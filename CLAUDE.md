@@ -1,5 +1,10 @@
 # CLAUDE.md — claude-drive-bridge
 
+## Status
+- **State:** Shipped
+- **Next action:** Verify the deployed Apps Script endpoint is still active and accepting POST requests.
+- **Last updated:** 2026-04-28
+
 ## What this is
 
 Two-part bridge that lets Claude (web/artifact) push files and notes directly into Google Drive:
